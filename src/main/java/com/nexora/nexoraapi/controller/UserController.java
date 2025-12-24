@@ -18,7 +18,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    //create
+
     @PostMapping
     public User createUser(@RequestBody User user){
         return userService.createUser(user);
@@ -30,13 +30,13 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    //Read by id
+
     @GetMapping("/{id}")
     public User getUserById(@PathVariable int id){
         return userService.getUserById(id);
     }
 
-    //Update
+
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user){
         user.setId(id); // Set ID from path parameter
